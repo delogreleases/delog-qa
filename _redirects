@@ -1,0 +1,3 @@
+# Netlify / Cloudflare Pages: keep development folders off the public site.
+/tools/*    /404.html   404
+/.review/*  /404.html   404

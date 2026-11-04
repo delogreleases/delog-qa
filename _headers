@@ -1,0 +1,24 @@
+# Security and download headers for Netlify and Cloudflare Pages (other hosts: see README).
+# tools/serve.mjs applies these locally too, so the policy is tested before you deploy.
+
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  X-Frame-Options: DENY
+  # Turn on once the site is served over HTTPS on its final domain:
+  # Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+/assets/*
+  Cache-Control: public, max-age=86400
+
+/downloads/*
+  Content-Disposition: attachment
+  Content-Type: application/octet-stream
+  Cache-Control: public, max-age=31536000, immutable
+  X-Robots-Tag: noindex
+
+/licenses/*
+  Content-Type: text/plain; charset=utf-8

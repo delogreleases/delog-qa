@@ -1,0 +1,51 @@
+<a class="skip" href="#main">Skip to content</a>
+<header class="pnav" data-pnav>
+  <div class="pnav__in">
+    <div class="pnav__isle pnav__brand">
+      <a class="pnav__logo" href="{{base}}index.html" aria-label="{{company}} — home">{{mark:h}}<span class="pnav__word">delog</span></a>
+      {{productName}}
+    </div>
+    <div class="pnav__isle pnav__mid">
+      <a class="pnav__mini pnav__mini--logo" href="{{base}}index.html" aria-label="{{company}} — home" tabindex="-1">{{mark:m}}</a>
+      <div class="pnav__groups">
+        <nav class="pnav__group pnav__group--main" id="site-nav" aria-label="Main" data-glide>
+          <span class="pnav__glide" aria-hidden="true"></span>
+          <a class="pnav__drop" href="{{base}}products.html" data-drop aria-haspopup="true" aria-expanded="false" aria-controls="nav-products"{{productsCurrent}}>Products{{icon:chevronDown:pnav__chev}}</a>
+          <a href="{{base}}changelog.html" data-nav="changelog" data-secondary>Changelog</a>
+          <a href="{{base}}licenses.html" data-nav="licenses" data-secondary>Licenses</a>
+          <a href="{{base}}contact.html" data-nav="contact">Contact</a>
+        </nav>
+        {{productLinks}}
+        <div class="pmenu" id="nav-products" data-drop-panel hidden>
+          {{productMenu}}
+        </div>
+      </div>
+      <a class="pnav__mini pnav__mini--cta" href="{{downloadHref}}" tabindex="-1">Download</a>
+    </div>
+    <div class="pnav__isle pnav__actions">
+      <button class="pnav__icon pnav__theme" type="button" data-theme-toggle aria-label="Switch theme">{{icon:sun:i--sun}}{{icon:moon:i--moon}}</button>
+      <a class="pnav__cta" href="{{downloadHref}}" data-nav="download">Download</a>
+      <button class="pnav__icon pnav__menu" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-sheet" aria-label="Open menu"><span class="burger" aria-hidden="true"><i></i><i></i></span></button>
+    </div>
+  </div>
+</header>
+<div class="sheet-scrim" data-sheet-close hidden></div>
+<div class="sheet" id="site-sheet" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <span class="sheet__grab" aria-hidden="true"></span>
+  <nav class="sheet__links" aria-label="Menu">
+    {{productRows}}
+    <a href="{{base}}products.html" data-nav="products">{{icon:box}}Products</a>
+    <a href="{{base}}changelog.html" data-nav="changelog">{{icon:notes}}Changelog</a>
+    <a href="{{base}}licenses.html" data-nav="licenses">{{icon:scale}}Licenses</a>
+    <a href="{{base}}contact.html" data-nav="contact">{{icon:mail}}Contact</a>
+  </nav>
+  {{sheetProduct}}
+  <div class="sheet__foot">
+    <div class="theme-seg" role="group" aria-label="Theme">
+      <button type="button" data-theme-set="system" aria-pressed="true">{{icon:monitor}}Auto</button>
+      <button type="button" data-theme-set="light" aria-pressed="false">{{icon:sun}}Light</button>
+      <button type="button" data-theme-set="dark" aria-pressed="false">{{icon:moon}}Dark</button>
+    </div>
+    <a class="btn btn--primary" href="{{downloadHref}}">Download</a>
+  </div>
+</div>
